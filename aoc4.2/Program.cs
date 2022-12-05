@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace aoc4._2
+﻿namespace aoc4._2
 {
     internal class Program
     {
