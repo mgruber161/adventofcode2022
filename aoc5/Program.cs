@@ -22,9 +22,7 @@ namespace aoc5
                 }
             }
             foreach (var stack in stacks)
-            {
                 result += stack.Peek()!.ToString();
-            }
             Console.WriteLine(result);
         }
 
@@ -37,7 +35,6 @@ namespace aoc5
                 for (int i = 7; i > -1; i--)
                     if (input[i][j] != ' ')
                         stacks[j / 4].Push(input[i][j]);
-
             }
             return stacks;
         }

@@ -18,16 +18,14 @@ namespace aoc5._2
             {
                 int[] numbers = Regex.Split(item, @"\D+").Skip(1).ToArray().Select(int.Parse).ToArray();
                 for (int i = 0; i < numbers[0]; i++)
-                    tmp.Add((char)stacks[numbers[1] - 1].Pop());
+                    tmp.Add((char)stacks[numbers[1] - 1].Pop()!);
                 tmp.Reverse();
                 foreach (var character in tmp)
                     stacks[numbers[2] - 1].Push(character);
                 tmp.Clear();
             }
             foreach (var stack in stacks)
-            {
                 result += stack.Peek()!.ToString();
-            }
             Console.WriteLine(result);
         }
 
@@ -40,7 +38,6 @@ namespace aoc5._2
                 for (int i = 7; i > -1; i--)
                     if (input[i][j] != ' ')
                         stacks[j / 4].Push(input[i][j]);
-
             }
             return stacks;
         }
