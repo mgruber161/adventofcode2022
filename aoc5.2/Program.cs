@@ -10,7 +10,7 @@ namespace aoc5._2
         static void Main(string[] args)
         {
             var input = File.ReadAllLines(@"C:\Users\grube\Source\repos\AOC\aoc5\aoc5.txt");
-            var stacks = ReadStack(input.Take(8).ToArray());
+            var stacks = ReadStacks(input.Take(8).ToArray());
             var result = String.Empty;
             var tmp = new List<char>();
             input = input.Skip(10).ToArray();
@@ -29,7 +29,7 @@ namespace aoc5._2
             Console.WriteLine(result);
         }
 
-        public static List<Stack> ReadStack(string[] input)
+        static List<Stack> ReadStacks(string[] input)
         {
             List<Stack> stacks = new List<Stack>();
             for (int j = 1; j < 34; j += 4)
