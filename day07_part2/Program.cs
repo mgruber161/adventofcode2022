@@ -1,0 +1,1 @@
+﻿var t = File.ReadAllLines(@"C:\Users\grube\Source\repos\AOC\day07_part1\d7.txt");
