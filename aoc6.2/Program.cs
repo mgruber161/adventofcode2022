@@ -1,21 +1,12 @@
-﻿namespace aoc6._2
+﻿var t = File.ReadAllText(@"C:\Users\grube\Source\repos\AOC\aoc6\aoc6.txt");
+var q = new Queue<char>(t.ToCharArray().Take(14));
+for (int i = 14; i < t.Length; i++)
 {
-    internal class Program
+    if (q.Distinct().Count() == 14)
     {
-        static void Main(string[] args)
-        {
-            var t = File.ReadAllText(@"C:\Users\grube\Source\repos\AOC\aoc6\aoc6.txt");
-            Queue<char> arr = new Queue<char>(t.ToCharArray().Take(14));
-            for (int i = 14; i < t.Length; i++)
-            {
-                if (arr.Distinct().Count() == 14)
-                {
-                    Console.WriteLine(i);
-                    break;
-                }
-                arr.Dequeue();
-                arr.Enqueue(t[i]);
-            }
-        }
+        Console.WriteLine(i);
+        break;
     }
+    q.Dequeue();
+    q.Enqueue(t[i]);
 }
